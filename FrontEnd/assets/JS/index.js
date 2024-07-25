@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Document is fully loaded');
     getWorks();
-    getCategories();
 });
 
 // Fonction pour recuperer les projets
@@ -17,6 +16,7 @@ function getWorks (){
     })
     .then(data => {
         afficherWorks(data);
+        getCategories(data);
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
@@ -51,7 +51,7 @@ function afficherWorks (works) {
 
 // Fonction pour récupérer les catégories
 
-function getCategories() {
+function getCategories(works) {
     console.log('Fetching categories...');
     fetch('http://localhost:5678/api/categories')
         .then(response => {
@@ -62,7 +62,7 @@ function getCategories() {
         })
         .then(data => {
             console.log('Categories data:', data);
-            afficherCategories(data);
+            afficherCategories(data,works);
         })
         .catch(error => {
             console.log('There was a problem with the fetch operation:', error);
@@ -71,7 +71,7 @@ function getCategories() {
 
 // Fonction pour afficher les catégories
 
-function afficherCategories(categories) {
+function afficherCategories(categories,works) {
     console.log('Displaying categories:', categories);
     const categoriesMenu = document.querySelector('.categories-menu');
     if (!categoriesMenu) {
@@ -88,9 +88,11 @@ function afficherCategories(categories) {
     categories.forEach(category => {
         const button = document.createElement("button");
         button.textContent = category.name;
+        console.log(category)
         button.addEventListener('click', () => {
-            filterProjects(category.id, projects);
-            setActiveCategory(button);
+            console.log('click')
+           filterWorks(category.id, works);
+           setActiveCategory(button);
         });
         categoriesMenu.appendChild(button);
     });
@@ -101,12 +103,14 @@ function afficherCategories(categories) {
 
 // Filtrer les projets par catégorie
 
-function filterProjects(category, projects) {
+function filterWorks(category, works) {
+    console.log(category)
     if (category === 'Tous') {
-        displayWorks(projects);
+        afficherWorks(works);
+        
     } else {
-        const filteredProjects = projects.filter(project => project.category.name === category);
-        displayWorks(filteredProjects);
+        const filteredProjects = works.filter(project => project.category.name === category);
+        afficherWorks(filteredProjects);
     }
 }
 
