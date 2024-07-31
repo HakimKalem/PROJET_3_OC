@@ -54,6 +54,7 @@ table {
 }
 
 /** end reset css**/
+
 body {
 	max-width: 1140px;
 	margin:auto;
@@ -175,13 +176,15 @@ li:hover {
 
 }
 
+
+
 #edit-button {
 	display: none;
 }
 
 #contact {
 	width: 50%;
-margin: auto;
+    margin: auto;
 }
 #contact > * {
 	text-align: center;
