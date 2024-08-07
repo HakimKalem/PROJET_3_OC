@@ -120,7 +120,7 @@ function filterWorks(categoryId) {
     // Récupère toutes les œuvres depuis le localStorage
     const allWorks = JSON.parse(localStorage.getItem('works'));
 
-        6 // Déclare la variable pour les œuvres filtrées
+    // Déclare la variable pour les œuvres filtrées
     let filteredWorks;
 
     if (categoryId === 'all') {
@@ -146,50 +146,6 @@ function activeCategory(categoryId) {
         }
     });
 }
-
-// Fonction pour integrer le mode 'Edition'
-
-document.addEventListener('DOMContentLoaded', () => {
-    const loginLogout = document.querySelector('.login-logout');
-    const editMode = document.querySelector('.mode-edition');
-    const editButton = document.querySelector('.edit-button');
-
-    // Verifier l'etat de connexion
-
-    function checkLoginStatus() {
-        const token = localStorage.getItem('token');
-        if (token) {
-            // Utilisateur connecte
-            loginLogout.textContent = 'Logout';
-            editMode.style.display = 'block';
-            editButton.style.display = 'inline-block';
-        } else {
-            // Utilisateur non connecte
-            loginLogout.textContent = 'Login';
-            editMode.style.display = 'none';
-            editButton.style.display = 'none';
-        }
-    }
-
-    // Verifie l'etat de connexion au chargement de la page
-
-    checkLoginStatus();
-
-    // Gestion Login/Logout
-
-    loginLogout.addEventListener('click', () => {
-        const token = localStorage.getItem('token');
-        if (token) {
-            // Deconnexion
-            localStorage.removeItem('token');
-            checkLoginStatus();
-        } else {
-            // Redirige vers la page de connexion
-            window.location.href = 'login.html';
-        }
-    });
-
-    });
 
 
 // Appel des fonctions une fois le DOM charge entierement
