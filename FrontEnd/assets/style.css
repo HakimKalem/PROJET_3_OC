@@ -196,7 +196,7 @@ li:hover {
 
 .modif-button {
 	align-items: center;
-	background-color: white;
+	background-color: #fffef8;
 	color: rgb(0, 0, 0);
 	border: none;
 	padding: 10px 20px;
@@ -361,13 +361,14 @@ a:active {
 
 /* PARTIE MODALES */
 
+/* FIRST MODALE */
+
 .modal {
 	position: fixed;
     top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
     width: 630px;
-    height: 688px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -375,6 +376,11 @@ a:active {
 }
 
 .modal-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
 	background-color: #fff;
     padding: 70px;
     border-radius: 8px;
@@ -405,10 +411,8 @@ a:active {
 
 .modal-content hr {
 	margin-top: 10%;
-	width: 470px;
-	display: flex;
-    align-items: center;
-    justify-content: center;
+	margin-left: 5%;
+	width: 430px;
 }
 
 .close-btn {
@@ -473,4 +477,189 @@ a:active {
 
 .fa-trash-can:hover {
 	transform: scale(1.1);
+}
+
+
+/* SECOND MODALE */
+
+.return-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.photo-section {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.hidden {
+	display: none;
+}
+
+.upload-placeholder {
+    width: 420px;
+    height: 180px;
+    background-color: #e1e8ed;
+    display: flex;
+	flex-direction: column;
+	gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: #88888863;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-placeholder .img-preview {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Pour contenir l'image dans le placeholder */
+}
+
+.upload-placeholder i {
+	font-size: 80px;
+}
+
+.upload-placeholder:hover {
+    background-color: #d0d6db;
+}
+
+.add-photo-btn {
+	width: 180px;
+    background-color: #88888863;
+    border: none;
+	border-radius: 20px;
+	padding: 12px;
+    color: #306685; /* Bleu */
+    font-size: 14px;
+    cursor: pointer;
+	font-family: 'Work Sans';
+	font-weight: bold;
+}
+
+.add-photo-btn:hover {
+    text-decoration: underline;
+}
+
+.img-info {
+    font-size: 12px;
+    color: black#666666;
+    margin-top: 5px;
+}
+
+
+.photo-section p {
+    font-size: 12px;
+    color: #888;
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+
+.validate-btn.disabled {
+    background-color: #a7a7a7; /* Gris */
+    color: #ffffff;
+    cursor: not-allowed;
+}
+
+.validate-btn.active {
+    background-color: #1D6154; /* Vert */
+    color: white;
+    cursor: pointer;
+}
+
+.validate-btn {
+    display: block;
+    width: 240px;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+	margin-top: 15px;
+}
+
+.validate-btn:hover {
+    background-color: #134224;
+}
+
+.photo-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.photo-form label {
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 5px;
+	margin-left: 15px;
+    display: block;
+}
+
+.photo-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.photo-form input[type="text"]:focus {
+    border-color: #0066CC;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+}
+
+
+.photo-form select {
+	width: 420px;
+    height: 51px;
+    border: none;
+    box-shadow: 3px 3px 10px #dddddd;
+    margin-top: 10px;
+    margin-bottom: 20px;
+	margin-left: 15px;
+    appearance: none;
+    padding: 6px 12px;
+}
+
+
+.photo-form select:focus {
+    border-color: #0066CC;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+}
+
+#category-select {
+	width: 420px;
+    height: 51px;
+    border: none;
+    box-shadow: 3px 3px 10px #dddddd;
+    margin-top: 10px;
+    margin-bottom: 20px;
+	margin-left: 15px;
+    appearance: none;
+    padding: 6px 12px;
 }
