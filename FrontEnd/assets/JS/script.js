@@ -381,8 +381,9 @@ function modalAjout() {
     const returnButton = document.createElement('span');
     returnButton.classList.add('return-button');
     returnButton.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
+
+
     returnButton.addEventListener('click', () => {
-        document.body.removeChild(overlayModal);
         modalsGroup.removeChild(secondModal);
         modalGallery();
     });
@@ -419,7 +420,6 @@ function modalAjout() {
     imgInfo.textContent = 'jpg. png : 4mo max';
     imgInfo.classList.add('img-info');
 
-
     const fileInput = document.createElement('input');
     fileInput.setAttribute('type', 'file');
     fileInput.setAttribute('id', 'file-input');
@@ -432,7 +432,7 @@ function modalAjout() {
                 uploadPhoto.innerHTML = '';
                 const imgPreview = document.createElement('img');
                 imgPreview.src = e.target.result;
-                imgPreview.classList.add('img-preview'); // Ajout d'une classe pour le style
+                imgPreview.classList.add('img-preview'); 
                 uploadPhoto.appendChild(imgPreview);
                 titleInput.value = fileInput.files[0].name;
             };
@@ -455,7 +455,7 @@ function modalAjout() {
     titleLabel.textContent = 'Titre';
 
     const titleInput = document.createElement('input');
-    titleInput.setAttribute('id', 'category-select');
+    titleInput.setAttribute('id', 'title-input');
     
     const categoryLabel = document.createElement('label');
     categoryLabel.textContent = 'Categorie';

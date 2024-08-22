@@ -652,7 +652,7 @@ input[type="text"] {
     box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
 }
 
-#category-select {
+#title-input {
 	width: 420px;
     height: 51px;
     border: none;
